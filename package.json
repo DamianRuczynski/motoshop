@@ -1,0 +1,39 @@
+{
+  "name": "motoshop",
+  "version": "1.0.0",
+  "description": "Motorbike parts shop fullstack web-app. Tech stack: HTML, SCSS, JavaScript, Java, MySQL. Front-end to back-end communication via REST API.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --watch",
+    "start": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DamianRuczynski/motoshop.git"
+  },
+  "keywords": [
+    "html",
+    "scss",
+    "javascript",
+    "webpack",
+    "java",
+    "mysql",
+    "rest",
+    "api"
+  ],
+  "author": "DamianRuczynski, janskiba, 5z3wczykj4kub",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DamianRuczynski/motoshop/issues"
+  },
+  "homepage": "https://github.com/DamianRuczynski/motoshop#readme",
+  "devDependencies": {
+    "css-loader": "^6.2.0",
+    "node-sass": "^6.0.1",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.50.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.0.0"
+  }
+}
