@@ -4,8 +4,8 @@
   "description": "Motorbike parts shop fullstack web-app. Tech stack: HTML, SCSS, JavaScript, Java, MySQL. Front-end to back-end communication via REST API.",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --watch",
-    "start": "webpack serve"
+    "build": "webpack --mode production",
+    "start": "webpack serve --mode development"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,10 @@
   },
   "homepage": "https://github.com/DamianRuczynski/motoshop#readme",
   "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "babel-loader": "^8.2.2",
     "css-loader": "^6.2.0",
     "node-sass": "^6.0.1",
     "sass-loader": "^12.1.0",
