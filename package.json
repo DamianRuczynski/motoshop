@@ -18,8 +18,7 @@
     "webpack",
     "java",
     "mysql",
-    "rest",
-    "api"
+    "rest api"
   ],
   "author": "DamianRuczynski, janskiba, 5z3wczykj4kub",
   "license": "ISC",
