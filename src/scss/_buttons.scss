@@ -1,0 +1,16 @@
+.button {
+  width: 80%;
+  height: 2.25rem;
+  max-width: 16rem;
+  font-family: inherit;
+  font-size: inherit;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
