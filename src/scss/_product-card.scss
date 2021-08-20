@@ -60,6 +60,11 @@
       .arrow-right {
         right: 0;
       }
+
+      .arrow--inactive {
+        color: rgba(255, 255, 255, 0.4);
+        cursor: default;
+      }
     }
   }
 
@@ -68,8 +73,6 @@
     padding: 0.5rem 0 1rem 0;
     background-color: #e3e3e3;
     border-top: 0.5px solid #999;
-
-    // overflow: hidden;
   }
 
   .product-card__info__title,

@@ -11,15 +11,17 @@ imagesContainers.forEach((imageContainer) => {
 
   const productCard = new ProductCard(imageContainer.childElementCount);
 
+  productCard.disableArrows([...leftArrows, ...rightArrows]);
+
   leftArrows.forEach((leftArrow) => {
-    leftArrow.addEventListener('click', () =>
-      productCard.handleLeftArrowClick(imageContainer)
-    );
+    leftArrow.addEventListener('click', () => {
+      productCard.handleLeftArrowClick(imageContainer);
+    });
   });
 
   rightArrows.forEach((rightArrow) => {
-    rightArrow.addEventListener('click', () =>
-      productCard.handleRightArrowClick(imageContainer)
-    );
+    rightArrow.addEventListener('click', () => {
+      productCard.handleRightArrowClick(imageContainer);
+    });
   });
 });
