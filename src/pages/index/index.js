@@ -2,6 +2,19 @@ import './index.scss';
 import ProductCard from '../../js/product-card.js';
 
 const imagesContainers = document.querySelectorAll('.product-card__images');
+const productCardLinks = document.querySelectorAll('.product-card__link');
+
+// prevent default anchor tag behavior when arrow is clicked
+productCardLinks.forEach((productCardLink) => {
+  productCardLink.addEventListener('click', (event) => {
+    if (
+      event.target.classList.contains('arrow-left') ||
+      event.target.classList.contains('arrow-right')
+    ) {
+      event.preventDefault();
+    }
+  });
+});
 
 imagesContainers.forEach((imageContainer) => {
   const leftArrows =

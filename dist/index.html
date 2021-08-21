@@ -8,6 +8,13 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>motoShop</title>
     <script src="./index.js" defer></script>
   </head>
@@ -18,12 +25,14 @@
         <div class="product-card__images">
           <img src="./assets/battery1.jpg" alt="battery" />
         </div>
-        <div class="product-card__backdrop">
-          <div class="product-card__backdrop__inner">
-            <span class="arrow-left material-icons">arrow_forward_ios</span>
-            <span class="arrow-right material-icons">arrow_forward_ios</span>
+        <a class="product-card__link" href="./product-details.html">
+          <div class="product-card__backdrop">
+            <div class="product-card__backdrop__inner">
+              <span class="arrow-left material-icons">arrow_forward_ios</span>
+              <span class="arrow-right material-icons">arrow_forward_ios</span>
+            </div>
           </div>
-        </div>
+        </a>
         <div class="product-card__info">
           <p class="product-card__info__title">Akumulator 12V 20Ah 6-Dzm-20</p>
           <p class="product-card__info__price">239 zł</p>
@@ -40,12 +49,14 @@
           <img src="./assets/battery3.jpg" alt="battery" />
           <img src="./assets/battery4.jpg" alt="battery" />
         </div>
-        <div class="product-card__backdrop">
-          <div class="product-card__backdrop__inner">
-            <span class="arrow-left material-icons">arrow_forward_ios</span>
-            <span class="arrow-right material-icons">arrow_forward_ios</span>
+        <a class="product-card__link" href="./product-details.html">
+          <div class="product-card__backdrop">
+            <div class="product-card__backdrop__inner">
+              <span class="arrow-left material-icons">arrow_forward_ios</span>
+              <span class="arrow-right material-icons">arrow_forward_ios</span>
+            </div>
           </div>
-        </div>
+        </a>
         <div class="product-card__info">
           <p class="product-card__info__title">Akumulator 12V 20Ah 6-Dzm-20</p>
           <p class="product-card__info__price">239 zł</p>
@@ -64,14 +75,14 @@
           <img src="./assets/battery2.jpg" alt="battery" />
           <img src="./assets/battery1.jpg" alt="battery" />
         </div>
-        <!-- <a href="./add-product.html"> -->
-        <div class="product-card__backdrop">
-          <div class="product-card__backdrop__inner">
-            <span class="arrow-left material-icons">arrow_forward_ios</span>
-            <span class="arrow-right material-icons">arrow_forward_ios</span>
+        <a class="product-card__link" href="./product-details.html">
+          <div class="product-card__backdrop">
+            <div class="product-card__backdrop__inner">
+              <span class="arrow-left material-icons">arrow_forward_ios</span>
+              <span class="arrow-right material-icons">arrow_forward_ios</span>
+            </div>
           </div>
-        </div>
-        <!-- </a> -->
+        </a>
         <div class="product-card__info">
           <p class="product-card__info__title">Akumulator 12V 20Ah 6-Dzm-20</p>
           <p class="product-card__info__price">239 zł</p>
@@ -83,7 +94,7 @@
       </div>
     </div>
     <footer class="footer">
-      <h2>motoShop</h2>
+      <img src="./assets/logo.png" alt="logo" />
       <div class="footer__links">
         <ul>
           <li><a href="#">HOME</a></li>
@@ -96,7 +107,12 @@
           <li><a href="#">BRAKES</a></li>
         </ul>
       </div>
-      <p><a href="#">source code</a></p>
+      <p>
+        <a href="https://github.com/DamianRuczynski/motoshop">
+          <i class="fab fa-github-square"></i>
+          <span>source code</span>
+        </a>
+      </p>
       <p>Copyright &copy; 2021 All rights reserved</p>
     </footer>
   </body>

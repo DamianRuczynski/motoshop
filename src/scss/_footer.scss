@@ -10,6 +10,10 @@
   height: 16rem;
   background-color: $primary-color;
 
+  img {
+    height: 2rem;
+  }
+
   .footer__links {
     display: flex;
     justify-content: space-between;
