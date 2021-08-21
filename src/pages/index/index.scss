@@ -1,0 +1,14 @@
+@import '../../scss/main';
+@import '../../scss/buttons';
+@import '../../scss/footer';
+@import '../../scss/product-card';
+
+.grid {
+  width: 100%;
+  max-width: 1400px;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 26rem));
+  justify-content: center;
+  justify-items: center;
+}

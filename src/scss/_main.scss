@@ -1,0 +1,21 @@
+$primary-color: #e3e3e3;
+$success-color: #6b9080;
+$danger-color: #c63333;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+body::after {
+  content: '';
+  display: block;
+  height: 16rem;
+}
