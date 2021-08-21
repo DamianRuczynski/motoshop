@@ -1,12 +1,11 @@
 const toggleMenu = () => {
-  const icon = document.querySelector('.menu-icon');
+  const icon = document.getElementById('nav-icon');
   const nav = document.querySelector('nav');
 
   icon.addEventListener('click', () => {
     nav.classList.toggle('active');
+    icon.classList.toggle('open');
   });
-
-  console.log('test');
 };
 
 export default toggleMenu;
