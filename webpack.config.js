@@ -18,6 +18,7 @@ module.exports = {
       'product-details',
       'index.js'
     ),
+    cart: path.join(__dirname, 'src', 'pages', 'cart', 'index.js'),
   },
   devServer: {
     // contentBase is DEPRECATED, use static instead!

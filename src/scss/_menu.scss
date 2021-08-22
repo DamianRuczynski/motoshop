@@ -79,32 +79,37 @@ header {
         width: auto;
       }
     }
-    .shopping-cart {
-      position: relative;
-      padding-top: 5px;
-      .shopping-cart_icon {
-        font-size: 32px;
-      }
+    a {
+      text-decoration: none;
+      color: black;
 
-      &:hover {
-        cursor: pointer;
-      }
+      .shopping-cart {
+        position: relative;
+        padding-top: 5px;
+        .shopping-cart_icon {
+          font-size: 32px;
+        }
 
-      .circle {
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        bottom: -2px;
-        right: -4px;
-        width: 17px;
-        height: 17px;
-        background-color: #000000;
-        border-radius: 50%;
-        p {
-          color: #d8d8d8;
-          font-size: 12px;
-          padding-top: 1px;
+        &:hover {
+          cursor: pointer;
+        }
+
+        .circle {
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          bottom: -2px;
+          right: -4px;
+          width: 17px;
+          height: 17px;
+          background-color: #000000;
+          border-radius: 50%;
+          p {
+            color: #d8d8d8;
+            font-size: 12px;
+            padding-top: 1px;
+          }
         }
       }
     }
