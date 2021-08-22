@@ -10,6 +10,13 @@ const toggleMenu = () => {
     menuShadow.classList.toggle('active');
     body.classList.toggle('hidden');
   });
+
+  menuShadow.addEventListener('click', function () {
+    this.classList.remove('active');
+    body.classList.remove('hidden');
+    nav.classList.remove('active');
+    icon.classList.remove('open');
+  });
 };
 
 export default toggleMenu;
