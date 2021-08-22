@@ -1,5 +1,9 @@
 import './index.scss';
+
+import toggleMenu from '../../js/menu.js';
 import ProductCard from '../../js/product-card.js';
+
+toggleMenu();
 
 const imagesContainers = document.querySelectorAll('.product-card__images');
 const productCardLinks = document.querySelectorAll('.product-card__link');

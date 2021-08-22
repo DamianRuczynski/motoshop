@@ -5,14 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
       rel="stylesheet"
     />
     <title>motoShop - add product</title>
     <script src="./add-product.js" defer></script>
   </head>
   <body>
-    <h1>Add product page</h1>
-    <a href="./index.html">Homepage</a>
+    <header>
+      <div class="navbar">
+        <div id="nav-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logo">
+          <a href="./index.html">
+            <img src="./assets/logo1.png" alt="motoshop logo" />
+          </a>
+        </div>
+        <div class="shopping-cart">
+          <span class="material-icons-outlined shopping-cart_icon">
+            shopping_basket
+          </span>
+          <div class="circle">
+            <p>4</p>
+          </div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="./index.html">HOME</a></li>
+          <li><a class="active" href="./add-product.html">ADD PRODUCT</a></li>
+          <li><a href="#">BATTERIES</a></li>
+          <li><a href="#">ELECTRICS</a></li>
+          <li><a href="#">FILTERS</a></li>
+          <li><a href="#">BRAKES</a></li>
+        </ul>
+      </nav>
+      <div class="menu-shadow"></div>
+    </header>
   </body>
 </html>
