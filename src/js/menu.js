@@ -1,12 +1,14 @@
 const toggleMenu = () => {
   const icon = document.getElementById('nav-icon');
   const nav = document.querySelector('nav');
-  const content = document.querySelector('main');
+  const menuShadow = document.querySelector('.menu-shadow');
+  const body = document.querySelector('body');
 
   icon.addEventListener('click', () => {
     nav.classList.toggle('active');
     icon.classList.toggle('open');
-    content.classList.toggle('shadow');
+    menuShadow.classList.toggle('active');
+    body.classList.toggle('hidden');
   });
 };
 

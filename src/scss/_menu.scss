@@ -1,6 +1,14 @@
+body {
+  &.hidden {
+    overflow-y: hidden;
+  }
+}
+
 header {
   .navbar {
+    position: relative;
     background-color: #d8d8d8;
+    z-index: 2;
     height: 70px;
     display: flex;
     flex-direction: row;
@@ -100,16 +108,18 @@ header {
   }
 
   nav {
+    position: fixed;
     width: 0;
+    z-index: 2;
     overflow-x: hidden;
-    background-color: #e7e7e7;
+    background-color: #ffffff;
     height: calc(100vh - 70px);
     width: 0;
+    transition: 0.25s ease-in-out;
 
     ul {
       list-style: none;
       padding: 5vw;
-      transition: 0.25s ease-in-out;
 
       li {
         font-size: 18px;
@@ -119,12 +129,38 @@ header {
         a {
           color: #000000;
           text-decoration: none;
+
+          &.active {
+            color: #777777;
+          }
         }
       }
     }
-    transition: 0.25s ease-in-out;
     &.active {
       width: 70vw;
     }
   }
+
+  .menu-shadow {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.322);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.25s ease-in-out;
+
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      overflow-y: hidden;
+    }
+  }
+}
+
+main {
+  float: right;
 }
