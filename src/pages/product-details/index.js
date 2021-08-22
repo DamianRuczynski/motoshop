@@ -1,5 +1,8 @@
 import './index.scss';
 import ProductCard from '../../js/product-card.js';
+import toggleMenu from '../../js/menu';
+
+toggleMenu();
 
 const leftArrow = document.querySelector('.arrow-left');
 const rightArrow = document.querySelector('.arrow-right');
