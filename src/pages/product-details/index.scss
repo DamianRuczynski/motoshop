@@ -6,6 +6,8 @@
 
 .product-card {
   max-width: 50rem;
+  margin-top: 6.5rem;
+  margin-bottom: 2rem;
 
   @media (pointer: coarse) {
     .product-card__backdrop {
