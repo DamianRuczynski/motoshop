@@ -16,7 +16,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <title>motoShop</title>
+    <title>motoShop - cart</title>
     <script src="./cart.js" defer></script>
   </head>
   <body>
@@ -55,6 +55,58 @@
       </nav>
       <div class="menu-shadow"></div>
     </header>
+
+    <main>
+      <div class="product-list">
+        <div class="product">
+          <div class="product__info">
+            <div class="photo"><img src="./assets/battery1.jpg" alt="" /></div>
+            <div class="name">
+              <p class="product__title">Akumulator 12V 20Ah 6-Dzm-20</p>
+            </div>
+            <div class="rest">
+              <select name="amout" id="product-amount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              <p class="product__price">239 zł</p>
+              <span class="material-icons"> delete </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product">
+          <div class="product__info">
+            <div class="photo"><img src="./assets/battery2.jpg" alt="" /></div>
+            <div class="name">
+              <p class="product__title">Akumulator 12V 20Ah 6-Dzm-20</p>
+            </div>
+            <div class="rest">
+              <select name="amout" id="product-amount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              <p class="product__price">239 zł</p>
+              <span class="material-icons"> delete </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="summary">
+        <span class="line"></span>
+        <div class="price">
+          <p>PRODUCTS PRICE</p>
+          <p>478 zł</p>
+        </div>
+        <button>Go to checkout</button>
+      </div>
+    </main>
 
     <footer class="footer">
       <img src="./assets/logo.png" alt="logo" />
