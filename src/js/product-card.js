@@ -34,3 +34,41 @@ export default class ProductCard {
     }
   };
 }
+
+export const setSingleProductCard = () => {
+  const imageContainer = document.querySelector('.product-card__images');
+  const leftArrow = document.querySelector('.arrow-left');
+  const rightArrow = document.querySelector('.arrow-right');
+
+  const productCard = new ProductCard(imageContainer.childElementCount);
+
+  productCard.disableArrows([leftArrow, rightArrow]);
+
+  leftArrow.addEventListener('click', () =>
+    productCard.handleLeftArrowClick(imageContainer)
+  );
+  rightArrow.addEventListener('click', () =>
+    productCard.handleRightArrowClick(imageContainer)
+  );
+};
+
+export const generateProductCardTemplate = (images) => {
+  return `
+    <div class="product-card__images">
+      ${images}
+    </div>
+    <div class="product-card__backdrop">
+      <div class="product-card__backdrop__inner">
+        <span class="arrow-left material-icons">arrow_forward_ios</span>
+        <span class="arrow-right material-icons">arrow_forward_ios</span>
+      </div>
+    </div>
+    <button
+      class="product-card__info__delete-product-button button"
+      type="button"
+    >
+      <span class="material-icons">clear</span>
+      <span>Delete images</span>
+    </button>
+  `;
+};

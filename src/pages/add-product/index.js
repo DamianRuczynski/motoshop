@@ -1,18 +1,48 @@
 import './index.scss';
-import ProductCard from '../../js/product-card.js';
+
+import {
+  setSingleProductCard,
+  generateProductCardTemplate,
+} from '../../js/product-card.js';
 import toggleMenu from '../../js/menu';
 
 toggleMenu();
 
-const leftArrow = document.querySelector('.arrow-left');
-const rightArrow = document.querySelector('.arrow-right');
-const imageContainer = document.querySelector('.product-card__images');
+const fileInput = document.querySelector('#product-image');
 
-const productCard = new ProductCard(imageContainer.childElementCount);
+const handleFileInputChange = () => {
+  const setImageDeletion = () => {
+    const deleteImageButton = document.querySelector(
+      '.product-card__info__delete-product-button'
+    );
 
-leftArrow.addEventListener('click', () =>
-  productCard.handleLeftArrowClick(imageContainer)
-);
-rightArrow.addEventListener('click', () =>
-  productCard.handleRightArrowClick(imageContainer)
-);
+    deleteImageButton.addEventListener('click', () => {
+      fileInput.value = null;
+      handleFileInputChange();
+    });
+  };
+
+  const productCardElement = document.querySelector('.product-card');
+
+  if (fileInput.files.length === 0) {
+    productCardElement.innerHTML = '';
+    productCardElement.classList.remove('active');
+    return;
+  }
+
+  const images = Array.from(fileInput.files)
+    .map((file) => {
+      return `<img src="${URL.createObjectURL(file)}" />`;
+    })
+    .join('');
+
+  productCardElement.innerHTML = generateProductCardTemplate(images);
+
+  if (productCardElement.childElementCount > 0) {
+    productCardElement.classList.add('active');
+    setSingleProductCard();
+    setImageDeletion();
+  }
+};
+
+fileInput.addEventListener('change', handleFileInputChange);

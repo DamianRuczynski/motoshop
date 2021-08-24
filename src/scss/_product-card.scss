@@ -72,8 +72,7 @@
       }
 
       .arrow--inactive {
-        color: rgba(255, 255, 255, 0.4);
-        cursor: default;
+        display: none;
       }
     }
   }

@@ -53,7 +53,7 @@
       }
     }
 
-    .choose-image-button {
+    .choose-images-button {
       width: 90%;
       max-width: 50rem;
       height: 40px;
@@ -87,5 +87,24 @@
     #product-image {
       display: none;
     }
+  }
+
+  .product-card {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .add-product-button {
+    display: block;
+    width: 90%;
+    max-width: 50rem;
+    height: 40px;
+    margin: 2rem auto;
+    padding: 0.5rem 0;
+    background-color: $success-color;
+    text-align: center;
   }
 }
