@@ -11,6 +11,13 @@ main {
   padding: 0 5vw;
   font-size: 18px;
 
+  .directory {
+    display: inline-flex;
+    a {
+      color: black;
+    }
+  }
+
   .product-list {
     display: flex;
     flex-direction: column;
@@ -86,6 +93,14 @@ main {
 
             &:hover {
               cursor: pointer;
+            }
+          }
+
+          @media (max-width: 350px) {
+            flex-direction: column;
+
+            .rest__element {
+              margin-top: 15px;
             }
           }
         }
