@@ -22,7 +22,7 @@ const generateProductCard = (images) => {
 const generateProductCards = (products) => {
   const productElements = products.map((product) => {
     return `
-      <div class="product-card" data-product-id="${product.id}">
+      <div class="product-card">
         <div class="product-card__images">
         ${product.images
           .map((image) => `<img src="${image}" alt="battery" />`)
