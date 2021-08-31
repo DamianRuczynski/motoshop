@@ -7,7 +7,9 @@ import ajax from '../../js/ajax.js';
 import ProductCard from '../../js/product-card.js';
 import { templates } from '../../js/templates.js';
 
-worker.start();
+worker.start({
+  onUnhandledRequest: 'bypass',
+});
 
 toggleMenu();
 

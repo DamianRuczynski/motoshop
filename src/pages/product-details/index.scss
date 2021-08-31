@@ -4,6 +4,17 @@
 @import '../../scss/product-card';
 @import '../../scss/menu';
 
+main {
+  &.main--load {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 16rem);
+    margin: 70px auto 0 auto;
+  }
+}
+
 .product-card {
   max-width: 50rem;
   margin-top: 6.5rem;
