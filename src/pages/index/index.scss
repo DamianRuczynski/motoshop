@@ -7,9 +7,18 @@
 .grid {
   width: 100%;
   max-width: 1400px;
-  margin: 4.5rem auto 2rem auto;
+  margin: 70px auto 2rem auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(17rem, 26rem));
   justify-content: center;
   justify-items: center;
+
+  &.grid--load {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 16rem);
+    margin-bottom: 0;
+  }
 }

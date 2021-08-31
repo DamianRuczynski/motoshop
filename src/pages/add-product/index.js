@@ -1,9 +1,7 @@
 import './index.scss';
 
-import {
-  setSingleProductCard,
-  generateProductCardTemplate,
-} from '../../js/product-card.js';
+import { templates } from '../../js/templates.js';
+import { setSingleProductCard } from '../../js/product-card.js';
 import toggleMenu from '../../js/menu';
 
 toggleMenu();
@@ -36,7 +34,7 @@ const handleFileInputChange = () => {
     })
     .join('');
 
-  productCardElement.innerHTML = generateProductCardTemplate(images);
+  productCardElement.innerHTML = templates.generateProductCard(images);
 
   if (productCardElement.childElementCount > 0) {
     productCardElement.classList.add('active');

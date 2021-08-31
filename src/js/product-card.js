@@ -51,24 +51,3 @@ export const setSingleProductCard = () => {
     productCard.handleRightArrowClick(imageContainer)
   );
 };
-
-export const generateProductCardTemplate = (images) => {
-  return `
-    <div class="product-card__images">
-      ${images}
-    </div>
-    <div class="product-card__backdrop">
-      <div class="product-card__backdrop__inner">
-        <span class="arrow-left material-icons">arrow_forward_ios</span>
-        <span class="arrow-right material-icons">arrow_forward_ios</span>
-      </div>
-    </div>
-    <button
-      class="product-card__info__delete-product-button button"
-      type="button"
-    >
-      <span class="material-icons">clear</span>
-      <span>Delete images</span>
-    </button>
-  `;
-};
