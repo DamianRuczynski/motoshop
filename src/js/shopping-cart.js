@@ -8,14 +8,15 @@ const createLocalStorageObject = () => {
   else {
     cartStorageArray = JSON.parse(cartStorage);
     updateCounter();
+    return cartStorageArray;
   }
 };
 
-const addToCart = (productId, amount) => {
+const addToCart = (productId) => {
   const productInfo = {
     id: cartStorageArray.length,
     productId: productId,
-    amount: amount,
+    amount: 1,
   };
 
   const check = checkForProduct(productId);
