@@ -4,6 +4,8 @@ import { shoppingCart } from '../../js/shopping-cart';
 import ajax from '../../js/ajax';
 import { worker } from '../../mocks/browser.js';
 
+window.deleteFromCart = shoppingCart.deleteFromCart;
+
 worker.start({
   onUnhandledRequest: 'bypass',
 });
@@ -16,8 +18,9 @@ const fetchProduct = async (productItem) => {
   const product = await ajax.fetchProducts(
     `/products/${productItem.productId}`
   );
-  displayProduct(product, productItem.amount);
-  console.log(product);
+  displayProduct(product, productItem.id);
+
+  shoppingCart.updateTotalPrice(product.price);
 };
 
 cartStorageArray.forEach((product) => {
@@ -25,10 +28,10 @@ cartStorageArray.forEach((product) => {
   console.log(product);
 });
 
-const displayProduct = (productItem, amount) => {
+const displayProduct = (productItem, localStorageProductId) => {
   const productList = document.querySelector('.product-list');
   const product = `
-    <div class="product">
+    <div class="product" id=${productItem.id}>
           <div class="product__info">
             <div class="photo"><img src="${productItem.images[0]}" alt="" /></div>
             <div class="name">
@@ -43,7 +46,7 @@ const displayProduct = (productItem, amount) => {
                 <option value="5">5</option>
               </select>
               <p class="product__price rest__element">$${productItem.price}</p>
-              <span class="material-icons rest__element"> delete </span>
+              <span onclick="deleteFromCart(${productItem.id},${productItem.price})" class="material-icons rest__element trash-icon"> delete </span>
             </div>
           </div>
         </div>

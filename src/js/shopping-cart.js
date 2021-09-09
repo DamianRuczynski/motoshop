@@ -2,6 +2,7 @@
 const cartStorage = localStorage.getItem('shoppingCart');
 
 let cartStorageArray = [];
+let totalPrice = 0;
 
 const createLocalStorageObject = () => {
   if (!cartStorage) localStorage.setItem('shoppingCart', '[]');
@@ -35,6 +36,19 @@ const addToCart = (productId) => {
   updateCounter();
 };
 
+const deleteFromCart = (productId, productPrice) => {
+  const productToDelete = document.getElementById(`${productId}`);
+  productToDelete.remove();
+  cartStorageArray.forEach((element, index) => {
+    if (element.productId === productId) {
+      cartStorageArray.splice(index, 1);
+    }
+  });
+  localStorage.shoppingCart = JSON.stringify(cartStorageArray);
+  updateCounter();
+  updateTotalPrice(-productPrice);
+};
+
 //cheks if praduct already exists in local cartStorageArray
 const checkForProduct = (productId) => {
   let productExists = false;
@@ -56,7 +70,20 @@ const updateCounter = () => {
   paragraph.textContent = `${counter}`;
 };
 
+const updateTotalPrice = (productPrice) => {
+  const updatedPrice = document.querySelector('.total-price');
+  const convertedPrice = parseFloat(productPrice);
+  console.log(convertedPrice);
+  totalPrice += convertedPrice;
+  console.log(totalPrice);
+  if (totalPrice.toFixed(2) === '-0.00') {
+    updatedPrice.textContent = `$0.00`;
+  } else updatedPrice.textContent = `$${totalPrice.toFixed(2)}`;
+};
+
 export const shoppingCart = {
   createLocalStorageObject,
   addToCart,
+  deleteFromCart,
+  updateTotalPrice,
 };
