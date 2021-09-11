@@ -15,38 +15,25 @@ import java.util.Set;
 @AllArgsConstructor
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_product", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idProduct;
 
-//    @ManyToOne
-//    @JoinColumn(name = "category_id", nullable = false)
-//    private ProductCategory category;
-
-    @Column(name = "name")
     private String name;
 
-    @Column(name = "catalog_number")
     private String catalogNumber;
 
-    @Column(name = "photo")
     private String photo;
 
-    @Column(name = "description")
     private String description;
 
-    @Column(name = "price_netto")
     private BigDecimal priceNetto;
 
-    @Column(name = "price_brutto")
     private BigDecimal priceBrutto;
 
-    @Column(name = "vat")
     private BigDecimal vat;
-
-    @Column(name = "quantity")
     private int quantity;
 
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "part")
-//    private Set<Part> part;
+    private Long idProductCategory;
+
+    private Long idPart;
 }

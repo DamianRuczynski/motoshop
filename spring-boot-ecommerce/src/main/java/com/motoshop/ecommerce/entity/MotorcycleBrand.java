@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name="motorcycle_model")
+@Table(name="motorcycle_brand")
 //@Data
 @Getter
 @Setter
@@ -16,21 +16,16 @@ import java.util.Set;
 public class MotorcycleBrand {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_motorcycle_model", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idMotorcycleBrand;
 
-    @Column(name = "name")
     private String name;
 
-    @Column(name = "country")
     private String country;
 
-    @Column(name = "logo")
     private String logo;
 
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "brand")
-//    private Set<MotorcycleModel> models;
+    private Long idMotorcycleModels;
 
 
 }

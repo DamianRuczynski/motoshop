@@ -16,16 +16,11 @@ import javax.persistence.*;
 public class Part {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_part", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idPart;
 
-//    @ManyToOne
-//    @JoinColumn(name = "id_product", nullable = false)
-    //private Product part;
+    private Long idProduct;
 
-//    @ManyToOne
-//    @JoinColumn(name = "id_product", nullable = false)
-  //  private MotorcycleModel motorcycle_model;
+    private Long idMotorcycleModel;
 
 }

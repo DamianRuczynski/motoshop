@@ -15,26 +15,18 @@ import java.util.Set;
 
 public class MotorcycleModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_motorcycle_model", nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idMotorcycleModel;
 
-//    @ManyToOne
-//    @JoinColumn(name = "id_motorcycle_brand", nullable = false)
-//    private MotorcycleBrand brand;
+    private Long idMotorcycleBrand;
 
-    @Column(name = "name")
     private String name;
 
-    @Column(name = "version")
     private String version;
 
-    @Column(name = "year_of_production")
     private String yearOfProduction;
 
-    @Column(name = "capacity")
     private String capacity;
 
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "part")
-//    private Set<Part> part;
+    private Long idPart;
 }
