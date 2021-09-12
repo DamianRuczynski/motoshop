@@ -5,32 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9240239d-d8ad-4cda-ab44-04cfe4c14255" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/SpringBootEcommerceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/controller/MotorcycleBrandController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/controller/MotorcycleModelController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/controller/PartController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/controller/ProductCategoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/controller/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/dao/MotorcycleBrandRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/dao/MotorcycleModelRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/dao/PartRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/dao/ProductCategoryRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/dao/ProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/entity/MotorcycleBrand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/entity/MotorcycleModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/entity/Part.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/entity/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/entity/ProductCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/test/java/com/motoshop/ecommerce/SpringBootEcommerceApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/dao/ProductDtoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/dto/ProductDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/dto/SingleProductDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/java/com/motoshop/ecommerce/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/spring-boot-ecommerce/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,17 +83,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

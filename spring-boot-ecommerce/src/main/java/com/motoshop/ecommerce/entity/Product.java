@@ -1,14 +1,15 @@
 package com.motoshop.ecommerce.entity;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.Set;
 
 @Entity
 @Table(name="product")
-//@Data
 @Getter
 @Setter
 @NoArgsConstructor
@@ -31,7 +32,8 @@ public class Product {
     private BigDecimal priceBrutto;
 
     private BigDecimal vat;
-    private int quantity;
+
+    private Integer quantity;
 
     private Long idProductCategory;
 
