@@ -4,11 +4,14 @@ import com.motoshop.ecommerce.dto.ProductDto;
 import com.motoshop.ecommerce.dto.SingleProductDto;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+
+@CrossOrigin
 @Repository
 public class ProductDtoRepository {
 
@@ -18,14 +21,26 @@ public class ProductDtoRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public SingleProductDto getProductById(Long id){
-        return null;
+    public SingleProductDto getProductById(Long id) {
+        return jdbcTemplate.queryForObject(
+                "SELECT p.id_product, p.name, p.price_brutto, p.description FROM product p WHERE p.id_product = " + id + ";",
+                (rs, rn) -> mapToSingleProductDto(rs));
+    }
+
+    private SingleProductDto mapToSingleProductDto(ResultSet rs) throws SQLException {
+        return new SingleProductDto(
+                rs.getLong("id_product"),
+                rs.getString("name"),
+                rs.getBigDecimal("price_brutto"),
+                getImagesToProduct(rs.getLong("id_product")),
+                rs.getString("description")
+        );
     }
 
     public List<ProductDto> getAllProductsWithImages() {
         List<ProductDto> productDtos = getAllProducts();
 
-        productDtos.forEach(productDtoF-> productDtoF.setImages(getImagesToProduct(productDtoF.getId())));
+        productDtos.forEach(productDtoF -> productDtoF.setImages(getImagesToProduct(productDtoF.getId())));
 //        for (ProductDto productDto : productDtos) {
 //            productDto.setImages(getImagesToProduct(productDto.getId()));
 //        }
