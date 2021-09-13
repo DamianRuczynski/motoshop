@@ -13,14 +13,13 @@ worker.start({
 const cartStorageArray = shoppingCart.createLocalStorageObject();
 
 toggleMenu();
+shoppingCart.updateTotalPrice();
 
 const fetchProduct = async (productItem) => {
   const product = await ajax.fetchProducts(
     `/products/${productItem.productId}`
   );
-  displayProduct(product, productItem.id);
-
-  shoppingCart.updateTotalPrice(product.price);
+  displayProduct(product, productItem);
 };
 
 cartStorageArray.forEach((product) => {
@@ -28,28 +27,43 @@ cartStorageArray.forEach((product) => {
   console.log(product);
 });
 
-const displayProduct = (productItem, localStorageProductId) => {
+const displayProduct = (productItem, localStorageItem) => {
   const productList = document.querySelector('.product-list');
   const product = `
     <div class="product" id=${productItem.id}>
           <div class="product__info">
-            <div class="photo"><img src="${productItem.images[0]}" alt="" /></div>
+            <div class="photo"><img src="${
+              productItem.images[0]
+            }" alt="" /></div>
             <div class="name">
               <p class="product__title">${productItem.name}</p>
             </div>
             <div class="rest">
               <select class="rest__element" name="amout" id="product-amount">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
+                 ${displayOptions(localStorageItem.amount)}
               </select>
               <p class="product__price rest__element">$${productItem.price}</p>
-              <span onclick="deleteFromCart(${productItem.id},${productItem.price})" class="material-icons rest__element trash-icon"> delete </span>
+              <span onclick="deleteFromCart(${productItem.id},${
+    productItem.price
+  })" class="material-icons rest__element trash-icon"> delete </span>
             </div>
           </div>
         </div>
   `;
   productList.insertAdjacentHTML('beforeend', product);
+  shoppingCart.changeAmount(
+    productItem.id,
+    productItem.price,
+    localStorageItem.id
+  );
+};
+
+//cheks what amount of product should be selected on page load
+const displayOptions = (amount) => {
+  const options = [1, 2, 3, 4, 5];
+  return options.map((option) => {
+    return `<option value="${option}" ${
+      amount == option ? 'selected' : ''
+    }>${option}</option> `;
+  });
 };

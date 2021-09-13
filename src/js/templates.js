@@ -45,7 +45,7 @@ const generateProductCards = (products) => {
           <p class="product-card__info__title">${product.name}</p>
           <p class="product-card__info__price">$${product.price}</p>
           <button class="product-card__info__add-to-cart-button button"
-           onclick="addToCart(${product.id})">
+           onclick="addToCart(${product.id}, ${product.price})">
             <span class="material-icons">add_shopping_cart</span>
             <span>Add to cart</span>
           </button>
@@ -74,9 +74,9 @@ const generateProductCardDetails = (product) => {
     <div class="product-card__info">
       <p class="product-card__info__title">${product.name}</p>
       <p class="product-card__info__price">$${product.price}</p>
-      <button onclick="addToCart(${
-        product.id
-      })" class="product-card__info__add-to-cart-button button">
+      <button onclick="addToCart(${product.id}, ${
+    product.price
+  })" class="product-card__info__add-to-cart-button button">
         <span class="material-icons">add_shopping_cart</span>
         <span>Add to cart</span>
       </button>
