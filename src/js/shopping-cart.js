@@ -97,6 +97,7 @@ const changeAmount = (productId, productPrice, localStorageItemId) => {
         cartStorageArray[localStorageItemId].amount = e.target.value;
         localStorage.shoppingCart = JSON.stringify(cartStorageArray);
         updateTotalPrice();
+        updateCounter();
       }
     });
   });
