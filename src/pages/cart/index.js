@@ -42,7 +42,9 @@ const displayProduct = (productItem, localStorageItem) => {
               <select class="rest__element" name="amout" id="product-amount">
                  ${displayOptions(localStorageItem.amount)}
               </select>
-              <p class="product__price rest__element">$${productItem.price}</p>
+              <p class="product__price rest__element">$${(
+                localStorageItem.amount * productItem.price
+              ).toFixed(2)}</p>
               <span onclick="deleteFromCart(${productItem.id},${
     productItem.price
   })" class="material-icons rest__element trash-icon"> delete </span>
