@@ -6,11 +6,17 @@ import { worker } from '../../mocks/browser.js';
 
 window.deleteFromCart = shoppingCart.deleteFromCart;
 
+const querySelectors = {
+  spinner: document.querySelector('.spinner'),
+  productList: document.querySelector('.product-list'),
+  summary: document.querySelector('.summary'),
+};
+
+const cartStorageArray = shoppingCart.createLocalStorageObject();
+
 worker.start({
   onUnhandledRequest: 'bypass',
 });
-
-const cartStorageArray = shoppingCart.createLocalStorageObject();
 
 toggleMenu();
 shoppingCart.updateTotalPrice();
@@ -22,13 +28,20 @@ const fetchProduct = async (productItem) => {
   displayProduct(product, productItem);
 };
 
-cartStorageArray.forEach((product) => {
-  fetchProduct(product);
-  console.log(product);
-});
+const startFetchingProducts = () => {
+  if (cartStorageArray.length !== 0) {
+    cartStorageArray.forEach((product) => {
+      fetchProduct(product);
+    });
+  } else {
+    //cart is empty so remove spinner
+    querySelectors.spinner.classList.add('hide');
+    querySelectors.summary.classList.add('loaded');
+  }
+};
+startFetchingProducts();
 
 const displayProduct = (productItem, localStorageItem) => {
-  const productList = document.querySelector('.product-list');
   const product = `
     <div class="product" id=${productItem.id}>
           <div class="product__info">
@@ -52,12 +65,19 @@ const displayProduct = (productItem, localStorageItem) => {
           </div>
         </div>
   `;
-  productList.insertAdjacentHTML('beforeend', product);
+  querySelectors.productList.insertAdjacentHTML('beforeend', product);
   shoppingCart.changeAmount(
     productItem.id,
     productItem.price,
     localStorageItem.id
   );
+
+  const productListArray = document.querySelectorAll('.product');
+  if (productListArray.length === cartStorageArray.length) {
+    querySelectors.spinner.classList.add('hide');
+    querySelectors.productList.classList.add('loaded');
+    querySelectors.summary.classList.add('loaded');
+  }
 };
 
 //cheks what amount of product should be selected on page load

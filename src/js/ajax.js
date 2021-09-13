@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:3000';
+const baseURL = 'http://80.211.249.17:8085/';
 
 const ajax = {
   fetchProducts: async (endpoint) => {
