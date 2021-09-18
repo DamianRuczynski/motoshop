@@ -9,12 +9,13 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name="product")
+@Table(name = "product")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idProduct;
@@ -38,4 +39,15 @@ public class Product {
     private Long idProductCategory;
 
     private Long idPart;
+
+    public Product(String name, String catalogNumber, String description, BigDecimal priceNetto, BigDecimal priceBrutto, BigDecimal vat, Integer quantity, Long idProductCategory) {
+        this.name = name;
+        this.catalogNumber = catalogNumber;
+        this.description = description;
+        this.priceNetto = priceNetto;
+        this.priceBrutto = priceBrutto;
+        this.vat = vat;
+        this.quantity = quantity;
+        this.idProductCategory = idProductCategory;
+    }
 }

@@ -24,4 +24,9 @@ public class Images {
     private Long idProduct;
 
     private String path;
+
+    public Images(Long idProduct, String path) {
+        this.idProduct = idProduct;
+        this.path = path;
+    }
 }

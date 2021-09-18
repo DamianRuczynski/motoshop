@@ -1,9 +1,13 @@
 package com.motoshop.ecommerce.dao;
 
+import com.motoshop.ecommerce.dto.CreateProductDto;
 import com.motoshop.ecommerce.dto.ProductDto;
 import com.motoshop.ecommerce.dto.SingleProductDto;
+import com.motoshop.ecommerce.entity.Images;
+import com.motoshop.ecommerce.entity.Product;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.sql.ResultSet;
@@ -16,9 +20,13 @@ import java.util.List;
 public class ProductDtoRepository {
 
     private JdbcTemplate jdbcTemplate;
+    private ProductRepository productRepository;
+    private ImageRepository imageRepository;
 
-    public ProductDtoRepository(JdbcTemplate jdbcTemplate) {
+    public ProductDtoRepository(JdbcTemplate jdbcTemplate, ProductRepository productRepository, ImageRepository imageRepository) {
         this.jdbcTemplate = jdbcTemplate;
+        this.productRepository = productRepository;
+        this.imageRepository = imageRepository;
     }
 
     public SingleProductDto getProductById(Long id) {
@@ -64,6 +72,32 @@ public class ProductDtoRepository {
                 rs.getLong("id_product"),
                 rs.getString("name"),
                 rs.getBigDecimal("price_brutto")
+        );
+    }
+
+    public void saveProductWithImages(CreateProductDto createProductDto) {
+
+        Product product = saveProduct(createProductDto);
+        createProductDto.getImages().forEach(path -> imageRepository.save(getImage(path, product.getIdProduct())));
+    }
+
+    private Images getImage(String path, Long idProduct) {
+        return new Images(idProduct, path);
+    }
+
+    private Product saveProduct(CreateProductDto createProductDto) {
+        return productRepository.save(createProduct(createProductDto));
+    }
+
+    private Product createProduct(CreateProductDto createProductDto) {
+        return new Product(createProductDto.getName(),
+                createProductDto.getCatalog_number(),
+                createProductDto.getDescription(),
+                createProductDto.getPrice_netto(),
+                createProductDto.getPrice_brutto(),
+                createProductDto.getVat(),
+                createProductDto.getQuantity(),
+                createProductDto.getId_product_category()
         );
     }
 }
