@@ -1,3 +1,6 @@
+import { shoppingCart } from './shopping-cart';
+window.addToCart = shoppingCart.addToCart;
+
 const generateProductCard = (images) => {
   return `
     <div class="product-card__images">
@@ -43,7 +46,8 @@ const generateProductCards = (products) => {
         <div class="product-card__info">
           <p class="product-card__info__title">${product.name}</p>
           <p class="product-card__info__price">$${product.price}</p>
-          <button class="product-card__info__add-to-cart-button button">
+          <button class="product-card__info__add-to-cart-button button"
+           onclick="addToCart(${product.id}, ${product.price})">
             <span class="material-icons">add_shopping_cart</span>
             <span>Add to cart</span>
           </button>
@@ -74,7 +78,9 @@ const generateProductCardDetails = (product) => {
     <div class="product-card__info">
       <p class="product-card__info__title">${product.name}</p>
       <p class="product-card__info__price">$${product.price}</p>
-      <button class="product-card__info__add-to-cart-button button">
+      <button onclick="addToCart(${product.id}, ${
+    product.price
+  })" class="product-card__info__add-to-cart-button button">
         <span class="material-icons">add_shopping_cart</span>
         <span>Add to cart</span>
       </button>

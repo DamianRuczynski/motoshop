@@ -3,7 +3,9 @@ import './index.scss';
 import { templates } from '../../js/templates.js';
 import { setSingleProductCard } from '../../js/product-card.js';
 import toggleMenu from '../../js/menu';
+import { shoppingCart } from '../../js/shopping-cart';
 
+shoppingCart.createLocalStorageObject();
 toggleMenu();
 
 const fileInput = document.querySelector('#product-image');

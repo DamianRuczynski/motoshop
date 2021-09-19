@@ -6,11 +6,12 @@ import toggleMenu from '../../js/menu.js';
 import ajax from '../../js/ajax.js';
 import ProductCard from '../../js/product-card.js';
 import { templates } from '../../js/templates.js';
-
+import { shoppingCart } from '../../js/shopping-cart';
 worker.start({
   onUnhandledRequest: 'bypass',
 });
 
+shoppingCart.createLocalStorageObject();
 toggleMenu();
 
 const preventArrowClickRedirection = () => {

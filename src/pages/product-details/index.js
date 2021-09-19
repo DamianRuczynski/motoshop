@@ -6,11 +6,13 @@ import toggleMenu from '../../js/menu';
 import ajax from '../../js/ajax.js';
 import { setSingleProductCard } from '../../js/product-card.js';
 import { templates } from '../../js/templates.js';
+import { shoppingCart } from '../../js/shopping-cart';
 
 worker.start({
   onUnhandledRequest: 'bypass',
 });
 
+shoppingCart.createLocalStorageObject();
 toggleMenu();
 
 (async () => {
