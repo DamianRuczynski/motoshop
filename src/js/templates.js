@@ -21,12 +21,14 @@ const generateProductCard = (images) => {
 
 const generateProductCards = (products) => {
   const productElements = products.map((product) => {
+    const hasImages = product.images.length > 0;
     return `
       <div class="product-card">
         <div class="product-card__images">
         ${product.images
-          .map((image) => `<img src="${image}" alt="battery" />`)
+          .map((image) => `<img src="${image}" alt="product image" />`)
           .join('')}
+        ${!hasImages ? '<img src="./assets/image-not-available.png"/>' : ''}
         </div>
         <a class="product-card__link" href="./product-details.html?id=${
           product.id
@@ -54,12 +56,14 @@ const generateProductCards = (products) => {
 };
 
 const generateProductCardDetails = (product) => {
+  const hasImages = product.images.length > 0;
   return `
     <div class="product-card">
     <div class="product-card__images">
     ${product.images
-      .map((image) => `<img src="${image}" alt="battery" />`)
+      .map((image) => `<img src="${image}" alt="product image" />`)
       .join('')}
+    ${!hasImages ? '<img src="./assets/image-not-available.png"/>' : ''}
     </div>
     <div class="product-card__backdrop">
       <div class="product-card__backdrop__inner">
