@@ -4,11 +4,14 @@ import { templates } from '../../js/templates.js';
 import { setSingleProductCard } from '../../js/product-card.js';
 import toggleMenu from '../../js/menu';
 import { shoppingCart } from '../../js/shopping-cart';
+import { getProductFormSubmitData } from '../../js/add-product-form';
+import ajax from '../../js/ajax';
 
 shoppingCart.createLocalStorageObject();
 toggleMenu();
 
 const fileInput = document.querySelector('#product-image');
+const productsForm = document.querySelector('#product-form');
 
 const handleFileInputChange = () => {
   const setImageDeletion = () => {
@@ -45,4 +48,15 @@ const handleFileInputChange = () => {
   }
 };
 
+const productFormSubmitHandler = async (event) => {
+  event.preventDefault();
+  const productFormSubmitData = getProductFormSubmitData();
+  try {
+    await ajax.addProduct(productFormSubmitData); // req will fail due to category being a string instead of a number
+  } catch (err) {
+    console.log(err.message);
+  }
+};
+
 fileInput.addEventListener('change', handleFileInputChange);
+productsForm.addEventListener('submit', productFormSubmitHandler);
