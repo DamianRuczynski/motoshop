@@ -23,6 +23,9 @@ const generateProductCard = (images) => {
 };
 
 const generateProductCards = (products) => {
+  if (products.length === 0)
+    return '<p class="no-products-found-message">There are no products in the database</p>';
+
   const productElements = products.map((product) => {
     const hasImages = product.images.length > 0;
     return `

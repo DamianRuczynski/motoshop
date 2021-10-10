@@ -13,7 +13,7 @@ const formElements = {
   ),
 };
 
-export const getProductFormSubmitData = () => ({
+export const getProductFormSubmitData = (images) => ({
   name: formElements.productNameInput.value,
   catalog_number: formElements.productCatalagNumberInput.value,
   vat: formElements.productVatInput.value,
@@ -22,5 +22,5 @@ export const getProductFormSubmitData = () => ({
   quantity: formElements.productQuantityInput.value,
   id_product_category: formElements.productCategorySelect.value,
   description: formElements.productDescTextarea.value,
-  images: [],
+  images,
 });

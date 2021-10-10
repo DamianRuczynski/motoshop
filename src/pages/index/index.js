@@ -7,6 +7,7 @@ import ajax from '../../js/ajax.js';
 import ProductCard from '../../js/product-card.js';
 import { templates } from '../../js/templates.js';
 import { shoppingCart } from '../../js/shopping-cart';
+
 worker.start({
   onUnhandledRequest: 'bypass',
 });
@@ -61,6 +62,7 @@ const setupProductCardCarousels = () => {
 
   const grid = document.querySelector('.grid');
   grid.classList.remove('grid--load');
+  if (products.length === 0) grid.classList.add('grid--load-fail');
   grid.innerHTML = templates.generateProductCards(products);
 
   preventArrowClickRedirection();
