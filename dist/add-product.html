@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <title>motoShop - add product</title>
+    <script src="./add-product.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div id="nav-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="logo">
+          <a href="./index.html">
+            <img src="./assets/logo1.png" alt="motoshop logo" />
+          </a>
+        </div>
+        <a href="./cart.html"
+          ><div class="shopping-cart">
+            <span class="material-icons-outlined shopping-cart_icon">
+              shopping_basket
+            </span>
+            <div class="circle">
+              <p class="counter">0</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="./index.html">HOME</a></li>
+          <li><a class="active" href="./add-product.html">ADD PRODUCT</a></li>
+          <li><a href="#">BATTERIES</a></li>
+          <li><a href="#">ELECTRICS</a></li>
+          <li><a href="#">FILTERS</a></li>
+          <li><a href="#">BRAKES</a></li>
+        </ul>
+      </nav>
+      <div class="menu-shadow"></div>
+    </header>
+    <form id="product-form">
+      <p>Home > Add product</p>
+      <div class="product-name">
+        <label for="product-name">Product name</label>
+        <input
+          id="product-name"
+          type="text"
+          placeholder="Enter the product name"
+          required
+        />
+      </div>
+      <div class="product-catalog-number">
+        <label for="product-catalog-number">Catalog number</label>
+        <input
+          id="product-catalog-number"
+          type="text"
+          placeholder="Enter the product catalog number"
+          required
+        />
+      </div>
+      <div class="vat">
+        <label for="vat">VAT</label>
+        <input
+          id="vat"
+          type="number"
+          placeholder="Enter value-added tax"
+          required
+        />
+      </div>
+      <div class="product-price">
+        <label for="product-net-price">Net price</label>
+        <input
+          id="product-net-price"
+          type="number"
+          placeholder="Enter the product net price"
+          required
+        />
+      </div>
+      <div class="product-price">
+        <label for="product-gross-price">Gross price</label>
+        <input
+          id="product-gross-price"
+          type="number"
+          placeholder="Enter the product gross price"
+          required
+        />
+      </div>
+      <div class="product-quantity">
+        <label for="product-quantity">Quantity</label>
+        <input
+          id="product-quantity"
+          type="number"
+          placeholder="Enter product quantity"
+          min="1"
+          max="10"
+          step="1"
+          required
+        />
+      </div>
+      <div class="product-category">
+        <label for="product-category">Category</label>
+        <select id="product-category" name="product-category" required>
+          <option value="" disabled selected hidden>Choose category</option>
+          <option value="1">Batteries</option>
+          <option value="2">Electrics</option>
+          <option value="3">Filters</option>
+          <option value="4">Brakes</option>
+        </select>
+      </div>
+      <div class="product-desc">
+        <label for="product-desc">Description</label>
+        <textarea
+          id="product-desc"
+          name="product-desc"
+          placeholder="Enter the product description"
+          required
+        ></textarea>
+      </div>
+      <div class="product-image">
+        <p>Images</p>
+        <label class="button choose-images-button" for="product-image">
+          <span class="material-icons"> add_a_photo </span>
+          <span>Choose images</span>
+        </label>
+        <input
+          type="file"
+          name="product-image"
+          id="product-image"
+          accept="image/jpeg,image/png"
+          multiple
+        />
+      </div>
+      <div class="product-card"></div>
+      <button class="button add-product-button" type="submit">
+        ADD PRODUCT
+      </button>
+    </form>
+    <footer class="footer">
+      <img src="./assets/logo1.png" alt="motoshop logo" />
+      <div class="footer__links">
+        <ul>
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">ADD PRODUCT</a></li>
+          <li><a href="#">BATTERIES</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">ELECTRICS</a></li>
+          <li><a href="#">FILTERS</a></li>
+          <li><a href="#">BRAKES</a></li>
+        </ul>
+      </div>
+      <p>
+        <a href="https://github.com/DamianRuczynski/motoshop">
+          <i class="fab fa-github-square"></i>
+          <span>source code</span>
+        </a>
+      </p>
+      <p>Copyright &copy; 2021 All rights reserved</p>
+    </footer>
+  </body>
+</html>

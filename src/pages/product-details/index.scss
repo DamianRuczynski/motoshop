@@ -1,0 +1,71 @@
+@import '../../scss/main';
+@import '../../scss/buttons';
+@import '../../scss/footer';
+@import '../../scss/product-card';
+@import '../../scss/menu';
+
+main {
+  &.main--load {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 16rem);
+    margin: 70px auto 0 auto;
+  }
+
+  .product-not-found-message {
+    font-size: 1.2rem;
+  }
+}
+
+.product-card {
+  max-width: 50rem;
+  margin-top: 6.5rem;
+  margin-bottom: 2rem;
+
+  @media (pointer: coarse) {
+    .product-card__backdrop {
+      opacity: 1;
+      background-color: transparent;
+
+      .product-card__backdrop__inner {
+        .arrow-left,
+        .arrow-right {
+          visibility: visible;
+          background-color: rgba(0, 0, 0, 0.3);
+          padding: 0.5rem;
+        }
+      }
+    }
+  }
+
+  .product-card__info {
+    height: auto;
+
+    .product-card__info__edit-product-button,
+    .product-card__info__delete-product-button {
+      display: block;
+      margin: 0.25rem auto;
+    }
+
+    .product-card__info__edit-product-button {
+      background-color: $success-color;
+    }
+
+    .product-card__info__delete-product-button {
+      background-color: $danger-color;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.product-desc {
+  width: 90%;
+  max-width: 50rem;
+  margin: 0 auto 2rem auto;
+
+  p:first-of-type {
+    font-weight: bold;
+  }
+}

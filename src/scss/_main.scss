@@ -1,0 +1,40 @@
+$primary-color: #d8d8d8;
+$success-color: #6b9080;
+$danger-color: #c63333;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  font-family: sans-serif;
+}
+
+body::after {
+  content: '';
+  display: block;
+  height: 16rem;
+}
+
+.spinner {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 4px solid $primary-color;
+  border-right-color: #000;
+  border-radius: 50%;
+  animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

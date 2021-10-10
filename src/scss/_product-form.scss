@@ -1,0 +1,113 @@
+#product-form {
+  display: block;
+  margin-top: 6rem;
+
+  p {
+    width: 90%;
+    max-width: 50rem;
+    margin: 0 auto;
+  }
+
+  .product-name,
+  .product-catalog-number,
+  .vat,
+  .product-price,
+  .product-quantity,
+  .product-category,
+  .product-desc,
+  .product-image {
+    margin: 1rem 0;
+
+    p {
+      font-size: 18px;
+    }
+
+    input,
+    label,
+    select,
+    textarea {
+      display: block;
+      width: 90%;
+      max-width: 50rem;
+      margin: 0rem auto;
+      font-size: 18px;
+      font-family: inherit;
+    }
+
+    input,
+    select,
+    textarea {
+      padding: 0.5rem;
+      border: 1px solid #999;
+      border-radius: 0.5rem;
+      outline: none;
+
+      &::placeholder {
+        color: #999;
+      }
+    }
+
+    label {
+      margin: 1.5rem auto;
+      margin-bottom: 0.75rem;
+
+      &:last-of-type {
+        margin-top: 12px;
+      }
+    }
+
+    .choose-images-button {
+      width: 90%;
+      max-width: 50rem;
+      height: 40px;
+      padding: 0.5rem 0;
+      background-color: #000;
+      text-align: center;
+
+      span {
+        vertical-align: text-bottom;
+      }
+    }
+
+    select {
+      background-color: transparent;
+
+      option {
+        padding: 0.5rem;
+        color: #000;
+      }
+
+      &:invalid {
+        color: #999;
+      }
+    }
+
+    textarea {
+      height: 10rem;
+      resize: none;
+    }
+
+    #product-image {
+      display: none;
+    }
+  }
+
+  .product-card {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .add-product-button {
+    display: block;
+    width: 90%;
+    max-width: 50rem;
+    height: 40px;
+    margin: 2rem auto;
+    padding: 0.5rem 0;
+    background-color: $success-color;
+    text-align: center;
+  }
+}

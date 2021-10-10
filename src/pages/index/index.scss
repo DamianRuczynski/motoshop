@@ -1,0 +1,29 @@
+@import '../../scss/main';
+@import '../../scss/_menu';
+@import '../../scss/buttons';
+@import '../../scss/footer';
+@import '../../scss/product-card';
+
+.grid {
+  width: 100%;
+  max-width: 1400px;
+  margin: 70px auto 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 26rem));
+  justify-content: center;
+  justify-items: center;
+
+  &.grid--load,
+  &.grid--load-fail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 16rem);
+    margin-bottom: 0;
+
+    .no-products-found-message {
+      font-size: 1.2rem;
+    }
+  }
+}

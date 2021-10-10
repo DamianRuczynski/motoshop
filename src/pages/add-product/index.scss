@@ -1,0 +1,37 @@
+@import '../../scss/main';
+@import '../../scss/buttons';
+@import '../../scss/footer';
+@import '../../scss/product-card';
+@import '../../scss/menu';
+@import '../../scss/product-form';
+
+.product-card {
+  max-width: 50rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+
+  .product-card__backdrop {
+    opacity: 1;
+    background-color: transparent;
+
+    .product-card__backdrop__inner {
+      .arrow-left,
+      .arrow-right {
+        visibility: visible;
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 0.5rem;
+      }
+    }
+  }
+
+  .product-card__info__delete-product-button {
+    display: block;
+    width: 90%;
+    max-width: 50rem;
+    height: 40px;
+    margin: 1rem auto;
+    background-color: $danger-color;
+    margin-bottom: 0;
+  }
+}
