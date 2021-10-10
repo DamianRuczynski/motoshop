@@ -23,13 +23,14 @@ toggleMenu();
   );
 
   try {
-    const product = await ajax.fetchProducts(`/products/${searchParams.id}`);
+    const product = await ajax.fetchProduct(`products/${searchParams.id}`);
 
     main.classList.remove('main--load');
     main.innerHTML = templates.generateProductCardDetails(product);
 
     setSingleProductCard();
   } catch (err) {
-    main.innerHTML = '<p>Product not found</p>';
+    main.innerHTML =
+      '<p class="product-not-found-message">Product not found</p>';
   }
 })();

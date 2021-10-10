@@ -13,12 +13,17 @@
   justify-content: center;
   justify-items: center;
 
-  &.grid--load {
+  &.grid--load,
+  &.grid--load-fail {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: calc(100vh - 16rem);
     margin-bottom: 0;
+
+    .no-products-found-message {
+      font-size: 1.2rem;
+    }
   }
 }

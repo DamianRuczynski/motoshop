@@ -1,4 +1,5 @@
-import './index.scss';
+import { v4 as uuidv4 } from 'uuid';
+import { ref, uploadBytes } from 'firebase/storage';
 
 import { templates } from '../../js/templates.js';
 import { setSingleProductCard } from '../../js/product-card.js';
@@ -6,6 +7,20 @@ import toggleMenu from '../../js/menu';
 import { shoppingCart } from '../../js/shopping-cart';
 import { getProductFormSubmitData } from '../../js/add-product-form';
 import ajax from '../../js/ajax';
+import storage from '../../firebase/config.js';
+
+import './index.scss';
+
+const uploadImageToFirebase = async (files) => {
+  const promises = [];
+  const imageNames = files.map((file) => uuidv4());
+  files.forEach((file, index) => {
+    const storageRef = ref(storage, imageNames[index]);
+    promises.push(uploadBytes(storageRef, file));
+  });
+  await Promise.all(promises);
+  return imageNames;
+};
 
 shoppingCart.createLocalStorageObject();
 toggleMenu();
@@ -50,9 +65,12 @@ const handleFileInputChange = () => {
 
 const productFormSubmitHandler = async (event) => {
   event.preventDefault();
-  const productFormSubmitData = getProductFormSubmitData();
   try {
-    await ajax.addProduct(productFormSubmitData); // req will fail due to category being a string instead of a number
+    const images = await uploadImageToFirebase(Array.from(fileInput.files));
+    const productFormSubmitData = getProductFormSubmitData(images);
+    await ajax.addProduct(productFormSubmitData);
+    alert('Product saved in database');
+    document.location = '/';
   } catch (err) {
     console.log(err.message);
   }
